@@ -1,15 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id: 1
-  name: MyString
-  stadium: MyString
-  foundation_year: 2016-07-30
-  telephone: MyString
+girone:
+  name: Girone
+  stadium: San Marcellino
+  foundation_year: 2012
+  telephone: 055/606480
 
-two:
-  id: 1
-  name: MyString
-  stadium: MyString
-  foundation_year: 2016-07-30
-  telephone: MyString
+quona:
+  name: Quona
+  stadium: Molin del Piano
+  foundation_year: 2000
+  telephone: 055/452158745

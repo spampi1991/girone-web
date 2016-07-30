@@ -1,17 +1,29 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  id: 1
-  name: MyString
-  surname: MyString
-  birthday: 2016-07-30
-  role: MyString
-  team_id: 1
+bruno:
+  name: Bruno
+  surname: Zanotto
+  birthday: 1970-01-01
+  role: Portiere
+  team: girone
 
-two:
-  id: 1
-  name: MyString
-  surname: MyString
-  birthday: 2016-07-30
-  role: MyString
-  team_id: 1
+spampi:
+  name: Francesco
+  surname: Spampinato
+  birthday: 1991-02-16
+  role: Difensore
+  team: girone
+
+vince:
+  name: Vincenzo
+  surname: Capolupo
+  birthday: 1989-01-01
+  role: Centrocampista
+  team: girone
+
+vagge:
+  name: Simone
+  surname: Vaggelli
+  birthday: 1981-01-02
+  role: Attaccante
+  team: girone

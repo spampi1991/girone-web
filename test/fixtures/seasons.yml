@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  year: 1
-  name: MyString
+2016:
+  year: 2016
+  name: 2015/2016
 
-two:
-  year: 1
-  name: MyString
+2017:
+  year: 2017
+  name: 2016/2017

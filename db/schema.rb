@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160730091606) do
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "stadium"
-    t.date     "foundation_year"
+    t.integer  "foundation_year"
     t.string   "telephone"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
