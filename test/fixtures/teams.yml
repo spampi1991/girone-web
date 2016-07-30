@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  name: MyString
+  stadium: MyString
+  foundation_year: 2016-07-30
+  telephone: MyString
+
+two:
+  id: 1
+  name: MyString
+  stadium: MyString
+  foundation_year: 2016-07-30
+  telephone: MyString
