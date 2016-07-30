@@ -16,9 +16,9 @@ ActiveRecord::Schema.define(version: 20160730091606) do
     t.date     "event_date"
     t.integer  "local_team_id"
     t.integer  "away_team_id"
+    t.integer  "season_id"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.integer  "season_id"
     t.index ["away_team_id"], name: "index_events_on_away_team_id"
     t.index ["event_date", "season_id", "local_team_id", "away_team_id"], name: "event_logical_key", unique: true
     t.index ["local_team_id"], name: "index_events_on_local_team_id"
@@ -30,9 +30,9 @@ ActiveRecord::Schema.define(version: 20160730091606) do
     t.string   "surname"
     t.date     "birthday"
     t.string   "role"
+    t.integer  "team_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "team_id"
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 

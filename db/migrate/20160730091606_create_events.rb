@@ -4,10 +4,11 @@ class CreateEvents < ActiveRecord::Migration[5.0]
       t.date :event_date
       t.integer :local_team_id
       t.integer :away_team_id
+
+      t.belongs_to :season, index: true, foreign_key: true
       t.timestamps
     end
 
-    add_reference :events, :season, foreign_key: true, index: true
     add_foreign_key :events, :teams, column: :local_team_id
     add_foreign_key :events, :teams, column: :away_team_id
     add_index(:events, :local_team_id)
