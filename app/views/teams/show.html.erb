@@ -1,22 +1,23 @@
-<h1>Teams#show</h1>
+<h1 class="text-center">Show Team</h1>
+
 <p>
-  <strong></strong>
+  <strong>Name</strong>
   <%= @team.name %>
 </p>
 
 <p>
-  <strong></strong>
+  <strong>Stadium</strong>
   <%= @team.stadium %>
 </p>
 
 <p>
-  <strong></strong>
-  <%= @team.foundation_year %>
+  <strong>Address</strong>
+  <%= @team.address %>
 </p>
 
 <p>
-  <strong></strong>
+  <strong>Telephone</strong>
   <%= @team.telephone %>
 </p>
 
-<%= link_to 'Back', teams_path %>
+<%= link_to 'Back', teams_path, class: 'btn btn-default' %>

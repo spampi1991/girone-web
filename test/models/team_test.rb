@@ -5,7 +5,7 @@ class TeamTest < ActiveSupport::TestCase
     team = Team.new
     team.name = ''
     team.stadium = 'San Marcellino'
-    team.foundation_year= 2012
+    team.address = 'Via Chiantigiana'
     team.telephone = '055/606480'
     assert_not team.save, 'Saved team without name'
   end
@@ -14,25 +14,25 @@ class TeamTest < ActiveSupport::TestCase
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = ''
-    team.foundation_year= 2012
+    team.address = 'Via Chiantigiana'
     team.telephone = '055/606480'
     assert_not team.save, 'Saved team without stadium'
   end
 
-  test "should not save team without foundation year" do
+  test "should not save team without address" do
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = 'San Marcellino'
-    team.foundation_year = nil
+    team.address = nil
     team.telephone = '055/606480'
-    assert_not team.save, 'Saved team without foundation year'
+    assert_not team.save, 'Saved team without address'
   end
 
   test "should not save team without telephone" do
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = 'San Marcellino'
-    team.foundation_year = 2012
+    team.address = 'Via Chiantigiana'
     team.telephone = ''
     assert_not team.save, 'Saved team without foundation telephone'
   end

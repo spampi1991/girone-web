@@ -3,7 +3,7 @@ class CreateTeams < ActiveRecord::Migration[5.0]
     create_table :teams do |t|
       t.string :name
       t.string :stadium
-      t.integer :foundation_year
+      t.string :address
       t.string :telephone
 
       t.timestamps

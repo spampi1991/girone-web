@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20160730091606) do
   create_table "teams", force: :cascade do |t|
     t.string   "name"
     t.string   "stadium"
-    t.integer  "foundation_year"
+    t.string   "address"
     t.string   "telephone"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

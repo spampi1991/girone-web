@@ -1,0 +1,12 @@
+<% if @team.errors.any? %>
+    <div class="error_explanation">
+      <div class="alert alert-danger">
+        <%= pluralize(@team.errors.count, 'error') %> prohibited this team from being saved.
+      </div>
+      <ul>
+        <%= @team.errors.full_messages.each do |msg| %>
+            <li style="color:red"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

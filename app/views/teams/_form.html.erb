@@ -1,40 +1,23 @@
-<%= form_for @team do |f| %>
 
-    <% if @team.errors.any? %>
-        <div class="has-error">
-          <h2>
-            <%= pluralize(@team.errors.count, 'error') %> prohibited this team from being saved
-          </h2>
-          <ul>
-            <%= @team.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for @team do |f| %>
+        <%= render 'teams/error_messages' %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name, class: 'form-control' %>
+
+        <%= f.label :stadium %>
+        <%= f.text_field :stadium, class: 'form-control' %>
+
+        <%= f.label :address %>
+        <%= f.text_field :address, class: 'form-control' %>
+
+        <%= f.label :telephone %>
+        <%= f.telephone_field :telephone, class: 'form-control' %>
+
+        <%= f.submit class: 'btn btn-primary' %>
+
     <% end %>
-
-    <div class="form-group">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :stadium %>
-      <%= f.text_field :stadium %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :foundation_year %>
-      <%= f.text_field :foundation_year %>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :telephone %>
-      <%= f.text_field :telephone %>
-    </div>
-
-    <p>
-      <%= f.submit class: "btn btn-default" %>
-    </p>
-
-<% end %>
+  </div>
+</div>
