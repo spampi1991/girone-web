@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.all
+    @teams = Team.order(:name).page params[:page]
   end
 
   def show
@@ -44,6 +44,6 @@ class TeamsController < ApplicationController
 
   private
     def team_params
-      params.require(:team).permit(:name, :stadium, :address, :telephone)
+      params.require(:team).permit(:name, :stadium, :address, :telephone, :pitch_type)
     end
 end

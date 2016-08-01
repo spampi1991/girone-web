@@ -5,6 +5,7 @@ class CreateTeams < ActiveRecord::Migration[5.0]
       t.string :stadium
       t.string :address
       t.string :telephone
+      t.string :pitch_type
 
       t.timestamps
     end

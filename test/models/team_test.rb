@@ -7,6 +7,7 @@ class TeamTest < ActiveSupport::TestCase
     team.stadium = 'San Marcellino'
     team.address = 'Via Chiantigiana'
     team.telephone = '055/606480'
+    team.pitch_type = 'Sintetico'
     assert_not team.save, 'Saved team without name'
   end
 
@@ -16,6 +17,7 @@ class TeamTest < ActiveSupport::TestCase
     team.stadium = ''
     team.address = 'Via Chiantigiana'
     team.telephone = '055/606480'
+    team.pitch_type = 'Sintetico'
     assert_not team.save, 'Saved team without stadium'
   end
 
@@ -25,6 +27,7 @@ class TeamTest < ActiveSupport::TestCase
     team.stadium = 'San Marcellino'
     team.address = nil
     team.telephone = '055/606480'
+    team.pitch_type = 'Sintetico'
     assert_not team.save, 'Saved team without address'
   end
 
@@ -34,7 +37,18 @@ class TeamTest < ActiveSupport::TestCase
     team.stadium = 'San Marcellino'
     team.address = 'Via Chiantigiana'
     team.telephone = ''
-    assert_not team.save, 'Saved team without foundation telephone'
+    team.pitch_type = 'Sintetico'
+    assert_not team.save, 'Saved team without telephone'
+  end
+
+  test "should not save team without pitch type" do
+    team = Team.new
+    team.name = 'Girone Calcio'
+    team.stadium = 'San Marcellino'
+    team.address = 'Via Chiantigiana'
+    team.telephone = '055/606480'
+    team.pitch_type = ''
+    assert_not team.save, 'Saved team without pitch type'
   end
 
 end

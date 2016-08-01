@@ -1,0 +1,12 @@
+<% if @player.errors.any? %>
+    <div class="error_explanation">
+      <div class="alert alert-danger">
+        <%= pluralize(@player.errors.count, 'error') %> prohibited this player from being saved.
+      </div>
+      <ul>
+        <%= @player.errors.full_messages.each do |msg| %>
+            <li style="color:red"><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

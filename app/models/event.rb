@@ -1,5 +1,5 @@
 class Event < ApplicationRecord
-
+  paginates_per 10
   validates :event_date, presence: true
 
   belongs_to :season
