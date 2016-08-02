@@ -1,0 +1,27 @@
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Stadium</th>
+    <th>Address</th>
+    <th>Telephone</th>
+    <th>Pitch Type</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @teams.each do |team| %>
+      <tr>
+        <td><%= team.name %></td>
+        <td><%= team.stadium %></td>
+        <td><%= team.address %></td>
+        <td><%= team.telephone %></td>
+        <td><%= team.pitch_type %></td>
+        <td><%= link_to "Show", team, class:'btn btn-info' %></td>
+        <td><%= link_to "Edit", edit_team_path(team), class:'btn btn-warning' %></td>
+        <td><%= link_to "Remove", team, method: :delete, data: { confirm: "Are you sure?" }, class:'btn btn-danger' %></td>
+      </tr>
+  <% end %>
+</table>
+
+<%= paginate @teams %>

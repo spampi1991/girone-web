@@ -1,6 +1,10 @@
 class TeamsController < ApplicationController
   def index
-    @teams = Team.order(:name).page params[:page]
+    if params[:search]
+      @teams = Team.search(params[:search]).page params[:page]
+    else
+      @teams = Team.order(:name).page params[:page]
+    end
   end
 
   def show
