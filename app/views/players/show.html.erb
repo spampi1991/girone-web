@@ -1,4 +1,13 @@
-<h1 class="text-center">Show Player</h1>
+<div class="ui small breadcrumb">
+  <a class="section">Admin</a>
+  <i class="right angle icon divider"></i>
+  <a class="active section">Players</a>
+  <i class="right angle icon divider"></i>
+  <a class="active section">Show</a>
+</div>
+
+<br>
+<br>
 
 <p>
   <strong>Name</strong>
@@ -25,4 +34,4 @@
   <%= @player.team.name %>
 </p>
 
-<%= link_to 'Back', players_path, class: 'btn btn-default' %>
+<%= link_to 'Back', players_path, class: 'ui left floated button' %>

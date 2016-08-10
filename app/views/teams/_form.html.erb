@@ -1,26 +1,33 @@
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @team do |f| %>
-        <%= render 'teams/error_messages' %>
+<%= form_for @team, html: { class: "ui form" } do |f| %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+    <%= render 'teams/error_messages' %>
 
-        <%= f.label :stadium %>
-        <%= f.text_field :stadium, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Name' %>
+    </div>
 
-        <%= f.label :address %>
-        <%= f.text_field :address, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :stadium %>
+      <%= f.text_field :stadium,  placeholder: 'Stadium' %>
+    </div>
 
-        <%= f.label :telephone %>
-        <%= f.telephone_field :telephone, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :address %>
+      <%= f.text_field :address,  placeholder: 'Address' %>
+    </div>
 
-        <%= f.label :pitch_type %>
-        <%= f.text_field :pitch_type, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :telephone %>
+      <%= f.telephone_field :telephone,  placeholder: 'Telephone' %>
+    </div>
 
-        <%= f.submit class: 'btn btn-primary' %>
+    <div class="field">
+      <%= f.label :pitch_type %>
+      <%= f.text_field :pitch_type,  placeholder: 'Pitch Type' %>
+    </div>
 
-    <% end %>
-  </div>
-</div>
+    <%= f.submit class: 'ui right floated primary button' %>
+
+<% end %>

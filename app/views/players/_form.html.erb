@@ -1,26 +1,33 @@
 
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_for @player do |f| %>
-        <%= render 'players/error_messages' %>
+<%= form_for @player, html: { class: "ui form" } do |f| %>
 
-        <%= f.label :name %>
-        <%= f.text_field :name, class: 'form-control' %>
+    <%= render 'players/error_messages' %>
 
-        <%= f.label :surname %>
-        <%= f.text_field :surname, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'Name' %>
+    </div>
 
-        <%= f.label :birthday %>
-        <%= f.date_field :birthday, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :surname %>
+      <%= f.text_field :surname, placeholder: 'Surname' %>
+    </div>
 
-        <%= f.label :role %>
-        <%= f.text_field :role, class: 'form-control' %>
+    <div class="field">
+      <%= f.label :birthday %>
+      <%= f.date_field :birthday, placeholder: 'Birthday' %>
+    </div>
 
-        <%= f.label :team_id %>
-        <%= f.collection_select :team_id, Team.all, :id, :name, {prompt: true}, {class: 'form-control'} %>
+    <div class="field">
+      <%= f.label :role %>
+      <%= f.text_field :role, placeholder: 'Role' %>
+    </div>
 
-        <%= f.submit class: 'btn btn-primary' %>
+    <div class="field">
+      <%= f.label :team_id %>
+      <%= f.collection_select :team_id, Team.all, :id, :name, { prompt: true }, { class: 'ui search selection dropdown' } %>
+    </div>
 
-    <% end %>
-  </div>
-</div>
+    <%= f.submit class: 'ui right floated primary button' %>
+
+<% end %>

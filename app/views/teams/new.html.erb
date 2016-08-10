@@ -1,7 +1,16 @@
-<h1 class="text-center">New Team</h1>
+<div class="ui small breadcrumb">
+  <a class="section">Admin</a>
+  <i class="right angle icon divider"></i>
+  <a class="active section">Teams</a>
+  <i class="right angle icon divider"></i>
+  <a class="active section">New</a>
+</div>
+
+<br>
+<br>
 
 <%= render 'teams/form' %>
 
-<%= link_to 'Back', teams_path, class: 'btn btn-default' %>
+<%= link_to 'Back', teams_path, class: 'ui left floated button' %>
 
 

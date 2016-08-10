@@ -1,16 +1,27 @@
-<h1 class="text-center">Players</h1>
 
-<table class="table table-striped">
-  <tr>
-    <th>Name</th>
-    <th>Surname</th>
-    <th>Birthday</th>
-    <th>Role</th>
-    <th>Team</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<div class="ui small breadcrumb">
+  <a class="section">Admin</a>
+  <i class="right angle icon divider"></i>
+  <a class="active section">Players</a>
+</div>
+
+<br>
+<br>
+
+<table class="ui selectable striped table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Birthday</th>
+      <th>Role</th>
+      <th>Team</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
   <% @players.each do |player| %>
       <tr>
         <td><%= player.name %></td>
@@ -18,15 +29,22 @@
         <td><%= player.birthday %></td>
         <td><%= player.role %></td>
         <td><%= player.team.name %></td>
-        <td><%= link_to "Show", player, class:'btn btn-info' %></td>
-        <td><%= link_to "Edit", edit_player_path(player), class:'btn btn-warning' %></td>
-        <td><%= link_to "Remove", player, method: :delete, data: { confirm: "Are you sure?" }, class:'btn btn-danger' %></td>
+        <td class="center aligned"><%= link_to "Show", player, class: 'ui teal button' %></td>
+        <td class="center aligned"><%= link_to "Edit", edit_player_path(player), class: 'ui yellow button' %></td>
+        <td class="center aligned"><%= link_to "Remove", player, method: :delete, data: { confirm: "Are you sure?" }, class: 'ui red button' %></td>
       </tr>
   <% end %>
+  </tbody>
+  <tfoot class="full-width">
+    <tr>
+      <th colspan="8">
+        <%= link_to "Add Player", new_player_path, class: 'ui left floated primary button' %>
+      </th>
+    </tr>
+  </tfoot>
 </table>
 
 <%= paginate @players %>
 
-<br>
 
-<%= link_to "New Player", new_player_path, class: 'btn btn-primary' %>
+

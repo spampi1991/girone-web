@@ -1,22 +1,26 @@
-<h1 class="text-center">Teams</h1>
-
-<div class="row">
-  <div class="col-md-6 col-md-offset-3">
-    <%= form_tag(teams_path, :method => "get", id: 'search-form', enforce_utf8: false) do %>
-      <%= text_field_tag :search, params[:search], placeholder: 'Search Teams' %>
-      <%= submit_tag "Search", :name => nil, class: 'btn btn-success' %>
-    <% end %>
-  </div>
+<div class="ui small breadcrumb">
+  <a class="section">Admin</a>
+  <i class="right angle icon divider"></i>
+  <a class="active section">Teams</a>
 </div>
+
+<br>
+<br>
+
+<%= form_tag(teams_path, :method => "get", id: 'search-form', enforce_utf8: false) do %>
+  <div class="ui search">
+    <div class="ui icon input">
+      <%= text_field_tag :search, params[:search], placeholder: 'Search Teams...', class: 'prompt' %>
+      <i class="search icon"></i>
+    </div>
+    <%= submit_tag "Search", :name => nil, class: 'ui small green button' %>
+  </div>
+<% end %>
 
 <br>
 
 <% if @teams.blank? %>
     <h4>There are no teams containing the term <%= params[:search] %></h4>
 <% else %>
-    <%= render 'teams/post' %>
+    <%= render 'teams/team' %>
 <% end %>
-
-<br>
-
-<%= link_to "New Team", new_team_path, class: 'btn btn-primary' %>
