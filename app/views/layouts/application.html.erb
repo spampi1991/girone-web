@@ -5,11 +5,11 @@
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= render 'layouts/shim' %>
   </head>
   <body>
   <%= render 'layouts/header' %>
   <div id="page-content" class="ui container">
+    <%= breadcrumbs class: 'ui breadcrumb', current_class: 'active section' %>
     <%= yield %>
     <%= render 'layouts/footer' %>
   </div>

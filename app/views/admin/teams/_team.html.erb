@@ -20,16 +20,16 @@
         <td><%= team.address %></td>
         <td><%= team.telephone %></td>
         <td><%= team.pitch_type %></td>
-        <td class="center aligned"><%= link_to "Show", team, class: 'ui small teal button' %></td>
-        <td class="center aligned"><%= link_to "Edit", edit_team_path(team), class: 'ui small yellow button' %></td>
-        <td class="center aligned"><%= link_to "Remove", team, method: :delete, data: { confirm: "Are you sure?" }, class: 'ui small red button' %></td>
+        <td class="center aligned"><%= link_to "Show", admin_team_path(team), class: 'ui small teal button' %></td>
+        <td class="center aligned"><%= link_to "Edit", edit_admin_team_path(team), class: 'ui small yellow button' %></td>
+        <td class="center aligned"><%= link_to "Remove", admin_team_path(team), method: :delete, data: { confirm: "Are you sure?" }, class: 'ui small red button' %></td>
       </tr>
   <% end %>
   </tbody>
   <tfoot class="full-width">
   <tr>
     <th colspan="8">
-      <%= link_to "Add Team", new_team_path, class: 'ui left floated small primary button' %>
+      <%= link_to "Add Team", new_admin_team_path, class: 'ui left floated small primary button' %>
     </th>
   </tr>
   </tfoot>

@@ -1,7 +1,7 @@
 
-<%= form_for @player, html: { class: "ui form" } do |f| %>
+<%= form_for([:admin, @player], html: { class: "ui form" }) do |f| %>
 
-    <%= render 'players/error_messages' %>
+    <%= render 'admin/players/error_messages' %>
 
     <div class="field">
       <%= f.label :name %>

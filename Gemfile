@@ -22,6 +22,8 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
+# Handle breadcrumb trails like a boss
+gem "gretel"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
