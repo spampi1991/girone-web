@@ -1,6 +1,5 @@
 class Player < ApplicationRecord
-  paginates_per 5
-  validates :name, :surname, :birthday, :role, presence: true
+  validates :name, :surname, :birthday, :role, :shirt_number, :preferred_foot, presence: true
 
   belongs_to :team
 end

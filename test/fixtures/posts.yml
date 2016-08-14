@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+first_news:
+  title: L'inizio del campionato è alle porte...
+  content: La nuova stagione calcistica sta per iniziare. La squadra affronterà un lungo periodo di preparazione che speriamo possa portare buoni risultati nel corso della stagione.
+  published_at: 2016-08-13 17:56:16
+  user: francesco
+
+second_news:
+  title: Brutta tegola per il Girone!
+  content: Brutte notizie in casa Girone. Nell' ultima amichevole pre-campionato il capitano della squadra ha riportato un duro infortunio durante uno scontro di gioco.
+  published_at: 2015-08-13 17:56:16
+  user: francesco
+
+third_news:
+  title: Ottima prestazione!
+  content: Ottima vittoria in casa per il Girone che si impone sugli acerrimi rivali del Quona per 2 a 1!
+  published_at: 2015-08-13 17:56:16
+  user: mattia

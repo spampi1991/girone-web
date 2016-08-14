@@ -2,12 +2,12 @@
 
 one:
   event_date: 2016-07-30
-  season: 2017
+  season: current_season
   local_team: girone
   away_team: quona
 
 two:
   event_date: 2016-09-30
-  season: 2017
+  season: current_season
   local_team: quona
   away_team: girone

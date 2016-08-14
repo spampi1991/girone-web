@@ -14,6 +14,5 @@ class CreateEvents < ActiveRecord::Migration[5.0]
     add_index(:events, :local_team_id)
     add_index(:events, :away_team_id)
     add_index(:events, [:event_date, :season_id, :local_team_id, :away_team_id], unique: true, name: 'event_logical_key')
-
   end
 end

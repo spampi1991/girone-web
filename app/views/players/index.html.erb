@@ -1,5 +1,5 @@
 
-<% breadcrumb :admin_players, @players %>
+<% breadcrumb :players, @players %>
 
 <br>
 <br>
@@ -25,16 +25,16 @@
         <td><%= player.birthday %></td>
         <td><%= player.role %></td>
         <td><%= player.team.name %></td>
-        <td class="center aligned"><%= link_to "Show", admin_player_path(player), class: 'ui teal button' %></td>
-        <td class="center aligned"><%= link_to "Edit", edit_admin_player_path(player), class: 'ui yellow button' %></td>
-        <td class="center aligned"><%= link_to "Remove", admin_player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: 'ui red button' %></td>
+        <td class="center aligned"><%= link_to "Show", player_path(player), class: 'ui teal button' %></td>
+        <td class="center aligned"><%= link_to "Edit", edit_player_path(player), class: 'ui yellow button' %></td>
+        <td class="center aligned"><%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: 'ui red button' %></td>
       </tr>
   <% end %>
   </tbody>
   <tfoot class="full-width">
     <tr>
       <th colspan="8">
-        <%= link_to "Add Player", new_admin_player_path, class: 'ui left floated primary button' %>
+        <%= link_to "Add Player", new_player_path, class: 'ui left floated primary button' %>
       </th>
     </tr>
   </tfoot>

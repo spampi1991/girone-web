@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+francesco:
+  username: __spampi__
+  email: francesco@gmail.com
+  password: 123456789
+  create_time: 2016-08-13 17:46:17
+  roles: admin, user
+
+mattia:
+  username: __mattia__
+  email: mattia@gmail.com
+  password: 987654321
+  create_time: 2016-08-13 17:46:17
+  roles: user

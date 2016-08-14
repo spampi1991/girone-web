@@ -1,7 +1,7 @@
 require 'test_helper'
 
 class TeamTest < ActiveSupport::TestCase
-  test "should not save team without name" do
+  test 'should not save team without name' do
     team = Team.new
     team.name = ''
     team.stadium = 'San Marcellino'
@@ -11,7 +11,7 @@ class TeamTest < ActiveSupport::TestCase
     assert_not team.save, 'Saved team without name'
   end
 
-  test "should not save team without stadium" do
+  test 'should not save team without stadium' do
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = ''
@@ -21,7 +21,7 @@ class TeamTest < ActiveSupport::TestCase
     assert_not team.save, 'Saved team without stadium'
   end
 
-  test "should not save team without address" do
+  test 'should not save team without address' do
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = 'San Marcellino'
@@ -31,7 +31,7 @@ class TeamTest < ActiveSupport::TestCase
     assert_not team.save, 'Saved team without address'
   end
 
-  test "should not save team without telephone" do
+  test 'should not save team without telephone' do
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = 'San Marcellino'
@@ -41,7 +41,7 @@ class TeamTest < ActiveSupport::TestCase
     assert_not team.save, 'Saved team without telephone'
   end
 
-  test "should not save team without pitch type" do
+  test 'should not save team without pitch type' do
     team = Team.new
     team.name = 'Girone Calcio'
     team.stadium = 'San Marcellino'
@@ -50,5 +50,4 @@ class TeamTest < ActiveSupport::TestCase
     team.pitch_type = ''
     assert_not team.save, 'Saved team without pitch type'
   end
-
 end

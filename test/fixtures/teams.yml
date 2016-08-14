@@ -3,13 +3,13 @@
 girone:
   name: Girone
   stadium: San Marcellino
-  address: Via Chantigiana
+  address: Via Chantigiana 110
   telephone: 055/606480
   pitch_type: Sintetico
 
 quona:
   name: Quona
   stadium: Molin del Piano
-  address: Via Provinciale
+  address: Via Provinciale 7
   telephone: 055/452158745
   pitch_type: Terra

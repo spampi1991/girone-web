@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-2016:
+previous_season:
   year: 2016
   name: 2015/2016
 
-2017:
+current_season:
   year: 2017
   name: 2016/2017

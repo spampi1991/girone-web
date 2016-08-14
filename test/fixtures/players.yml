@@ -5,6 +5,8 @@ bruno:
   surname: Zanotto
   birthday: 1970-01-01
   role: Portiere
+  shirt_number: 12
+  preferred_foot: Dx
   team: girone
 
 spampi:
@@ -12,6 +14,8 @@ spampi:
   surname: Spampinato
   birthday: 1991-02-16
   role: Difensore
+  shirt_number: 6
+  preferred_foot: Dx
   team: girone
 
 vince:
@@ -19,6 +23,8 @@ vince:
   surname: Capolupo
   birthday: 1989-01-01
   role: Centrocampista
+  shirt_number: 8
+  preferred_foot: Dx
   team: girone
 
 vagge:
@@ -26,4 +32,15 @@ vagge:
   surname: Vaggelli
   birthday: 1981-01-02
   role: Attaccante
+  shirt_number: 10
+  preferred_foot: Sx
   team: girone
+
+lello:
+  name: Alessandro
+  surname: Lellini
+  birthday: 1982-02-02
+  role: Difensore
+  shirt_number: 2
+  preferred_foot: Sx
+  team: quona

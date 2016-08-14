@@ -2,13 +2,13 @@
 #   link "Home", root_path
 # end
 
-crumb :admin_players do
-   link "Players", admin_players_path
+crumb :players do
+   link "Players", players_path
  end
 
-crumb :admin_player do |player|
-   link player.surname, admin_player_path(player)
-   parent :admin_players
+crumb :player do |player|
+   link player.surname, player_path(player)
+   parent :players
  end
 
 # crumb :project_issues do |project|
