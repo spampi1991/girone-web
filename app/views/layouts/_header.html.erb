@@ -1,11 +1,28 @@
 <div class="ui top fixed small menu">
-  <div href="#" class="header item">Girone Web</div>
-  <a href="/" class="item">
-    <i class="home icon"></i> Home
-  </a>
+
+  <div class="header item">Girone Web</div>
+
+  <%= link_to root_path, class: 'item' do %>
+      <i class="home icon"></i> Home
+  <% end %>
+
+  <div class="ui dropdown item">
+    <i class="settings icon"></i> Admin
+    <i class="dropdown icon"></i>
+    <div class="menu">
+      <%= link_to teams_path, class: 'item' do %>
+          Teams
+      <% end %>
+      <%= link_to players_path, class: 'item' do %>
+          Players
+      <% end %>
+    </div>
+  </div>
+
   <div class="right menu">
     <div class="item">
       <div class="ui primary button">Sign Up</div>
     </div>
   </div>
+
 </div>

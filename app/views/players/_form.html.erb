@@ -1,5 +1,5 @@
 
-<%= form_for(@player, html: { class: "ui form" }) do |f| %>
+<%= form_for(@player, html: { class: "ui form error" }) do |f| %>
 
     <%= render 'players/error_messages' %>
 
@@ -15,7 +15,7 @@
 
     <div class="field">
       <%= f.label :birthday %>
-      <%= f.date_field :birthday, placeholder: 'Birthday' %>
+      <%= f.text_field :birthday, placeholder: 'Birthday', id: "player_birthday" %>
     </div>
 
     <div class="field">
