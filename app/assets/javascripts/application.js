@@ -14,4 +14,7 @@
 //= require jquery-ui
 //= require semantic
 //= require turbolinks
+//= require paloma
 //= require init
+//= require_directory ./widgets
+//= require_tree ./views

@@ -84,6 +84,7 @@ GEM
     nokogiri (1.6.8-x86-mingw32)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    paloma (5.0.0)
     pg (0.18.4-x86-mingw32)
     pkg-config (1.1.7)
     puma (3.4.0)
@@ -164,6 +165,7 @@ DEPENDENCIES
   jquery-rails
   jquery-ui-rails
   kaminari
+  paloma (~> 5.0.0)
   pg
   puma (~> 3.0)
   rails (~> 5.0.0)

@@ -11,6 +11,7 @@
   <div class="ui container" style="margin-top: 5%">
     <%= breadcrumbs class: 'ui breadcrumb', current_class: 'active section' %>
     <%= yield %>
+    <%= insert_paloma_hook %>
     <%= render 'layouts/footer' %>
   </div>
   </body>

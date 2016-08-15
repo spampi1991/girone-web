@@ -26,6 +26,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 # Handle breadcrumb trails like a boss
 gem "gretel"
+# Page-specific javascript for Rails done right.
+gem 'paloma', '~> 5.0.0'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'
