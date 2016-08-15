@@ -5,8 +5,19 @@
 window.GironeWeb ||= {}
 
 GironeWeb.init = ->
+  initializeWidgets()
+
+initializeWidgets = ->
   $(".ui.dropdown").dropdown()
-  $("#player_birthday").datepicker()
+
+  $(".date_field").datepicker({
+    changeMonth: true,
+    changeYear: true,
+    yearRange: "1950:2000",
+    dateFormat: "dd-mm-yy"
+    onClose: (dateText, inst) ->
+      $(inst.input).change().focusout()
+  })
 
 $(document).on "turbolinks:load", ->
   GironeWeb.init()

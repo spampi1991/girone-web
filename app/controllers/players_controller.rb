@@ -19,7 +19,7 @@ class PlayersController < ApplicationController
     @player = Player.new(player_params)
 
     if @player.save
-      redirect_to admin_player_url(@player)
+      redirect_to player_url(@player)
     else
       render 'new'
     end
@@ -29,7 +29,7 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
 
     if @player.update(player_params)
-      redirect_to admin_player_path(@player)
+      redirect_to player_path(@player)
     else
       render 'edit'
     end
@@ -39,12 +39,12 @@ class PlayersController < ApplicationController
     @player = Player.find(params[:id])
     @player.destroy
 
-    redirect_to admin_players_path
+    redirect_to players_path
   end
 
   private
     def player_params
-      params.require(:player).permit(:name, :surname, :birthday, :role, :team_id)
+      params.require(:player).permit(:name, :surname, :birthday, :role, :shirt_number, :preferred_foot, :team_id)
     end
 end
 

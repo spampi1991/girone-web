@@ -1,9 +1,10 @@
-# crumb :root do
-#   link "Home", root_path
-# end
+crumb :root do
+  link "Home", root_path
+end
 
 crumb :players do
-   link "Players", players_path
+  link "Players", players_path
+  parent :root
  end
 
 crumb :player do |player|

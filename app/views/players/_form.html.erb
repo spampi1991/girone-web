@@ -5,22 +5,32 @@
 
     <div class="field">
       <%= f.label :name %>
-      <%= f.text_field :name, placeholder: 'Name' %>
+      <%= f.text_field :name, placeholder: 'Name', autocomplete: 'off' %>
     </div>
 
     <div class="field">
       <%= f.label :surname %>
-      <%= f.text_field :surname, placeholder: 'Surname' %>
+      <%= f.text_field :surname, placeholder: 'Surname', autocomplete: 'off' %>
     </div>
 
     <div class="field">
       <%= f.label :birthday %>
-      <%= f.text_field :birthday, placeholder: 'Birthday', id: "player_birthday" %>
+      <%= f.text_field :birthday, class: 'date_field', placeholder: 'Birthday', autocomplete: 'off' %>
     </div>
 
     <div class="field">
       <%= f.label :role %>
-      <%= f.text_field :role, placeholder: 'Role' %>
+      <%= f.text_field :role, placeholder: 'Role', autocomplete: 'off' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :shirt_number %>
+      <%= f.text_field :shirt_number, placeholder: 'Shirt Number', autocomplete: 'off' %>
+    </div>
+
+    <div class="field">
+      <%= f.label :preferred_foot %>
+      <%= f.text_field :preferred_foot, placeholder: 'Preferred Foot', autocomplete: 'off' %>
     </div>
 
     <div class="field">
