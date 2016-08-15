@@ -8,9 +8,20 @@ crumb :players do
  end
 
 crumb :player do |player|
-   link player.surname, player_path(player)
+   link player.surname + ' ' + player.name, player_path(player)
    parent :players
- end
+end
+
+crumb :new_player do
+  link "New Player", new_player_path
+  parent :players
+end
+
+crumb :edit_player do |player|
+  link "Edit #{player.surname + ' ' + player.name}", player
+  parent :players
+end
+
 
 # crumb :project_issues do |project|
 #   link "Issues", project_issues_path(project)
