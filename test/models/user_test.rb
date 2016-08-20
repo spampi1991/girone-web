@@ -3,51 +3,43 @@ require 'test_helper'
 class UserTest < ActiveSupport::TestCase
 
   setup do
-    @user = User.new
+    @empty_user = User.new
   end
 
   test 'should save user with all required fields' do
-    @user.username = '__guice__'
-    @user.email = 'example@gmail.com'
-    @user.password = '123456789'
-    @user.create_time = DateTime.new
-    assert @user.save, 'Not saved user with all required fields'
+    @empty_user.name = '__guice__'
+    @empty_user.email = 'example@gmail.com'
+    @empty_user.password = '123456789'
+    assert @empty_user.save, 'Not saved user with all required fields'
   end
 
   test 'should not save user without name' do
-    @user.username = nil
-    @user.email = 'example@gmail.com'
-    @user.password = '123456789'
-    @user.create_time = DateTime.new
-    assert_not @user.save, 'Saved user without username'
+    @empty_user.name = nil
+    @empty_user.email = 'example@gmail.com'
+    @empty_user.password = '123456789'
+    assert_not @empty_user.save, 'Saved user without username'
   end
 
   test 'should not save user without email' do
-    @user.username = '__guice__'
-    @user.email = ''
-    @user.password = '123456789'
-    @user.create_time = DateTime.new
-    assert_not @user.save, 'Saved user without email'
+    @empty_user.name = '__guice__'
+    @empty_user.email = ''
+    @empty_user.password = '123456789'
+    assert_not @empty_user.save, 'Saved user without email'
   end
 
   test 'should not save user without password' do
-    @user.username = '__guice__'
-    @user.email = 'example@gmail.com'
-    @user.password = nil
-    @user.create_time = DateTime.new
-    assert_not @user.save, 'Saved user without password'
+    @empty_user.name = '__guice__'
+    @empty_user.email = 'example@gmail.com'
+    @empty_user.password = nil
+    assert_not @empty_user.save, 'Saved user without password'
   end
 
-  test 'should not save user without create time' do
-    @user.username = '__guice__'
-    @user.email = 'example@gmail.com'
-    @user.password = '123456789'
-    @user.create_time = nil
-    assert_not @user.save, 'Saved user without create_time'
-  end
-
-  teardown do
-    puts @user.errors.messages
+  test 'user should not be valid with different password and confirmation password' do
+    @empty_user.name = '__guice__'
+    @empty_user.email = 'example@gmail.com'
+    @empty_user.password = '123'
+    @empty_user.password_confirmation = '321'
+    assert_not @empty_user.valid?, 'User is valid with different password and confirmation password'
   end
 
 end

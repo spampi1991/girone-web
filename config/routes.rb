@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: "home#index"
+  root to: 'home#index'
+  resources :players
+  resources :teams
+  resources :users
 
-  scope '/admin' do
-    resources :players
-    resources :teams
-  end
+  get '/signup', to: 'users#new'
+
 end
