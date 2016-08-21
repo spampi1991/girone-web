@@ -9,6 +9,8 @@ class GironeWeb.view.EditTeamView extends GironeWeb.view.ApplicationView
     Paloma.controller "Teams",
       edit: () =>
         super
+      create: () =>
+        super
 
 editTeamView = new GironeWeb.view.EditTeamView
 editTeamView.render()

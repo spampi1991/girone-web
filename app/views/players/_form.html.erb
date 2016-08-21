@@ -1,43 +1,43 @@
 
-<%= form_for(@player, html: { class: "ui form error" }) do |f| %>
+<%= form_for(@player, html: { class: 'ui form ' + (@player.errors.any? ? 'error' : '') }) do |f| %>
 
     <%= render 'players/error_messages' %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder: 'Name', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@player.errors[:name].any? ? 'error' : '') do %>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: 'Name', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :surname %>
-      <%= f.text_field :surname, placeholder: 'Surname', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@player.errors[:surname].any? ? 'error' : '') do %>
+        <%= f.label :surname %>
+        <%= f.text_field :surname, placeholder: 'Surname', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :birthday %>
-      <%= f.text_field :birthday, class: 'date_field', placeholder: 'Birthday', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@player.errors[:birthday].any? ? 'error' : '') do %>
+        <%= f.label :birthday %>
+        <%= f.text_field :birthday, class: 'date_field', placeholder: 'Birthday', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :role %>
-      <%= f.text_field :role, placeholder: 'Role', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@player.errors[:role].any? ? 'error' : '') do %>
+        <%= f.label :role %>
+        <%= f.text_field :role, placeholder: 'Role', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :shirt_number %>
-      <%= f.text_field :shirt_number, placeholder: 'Shirt Number', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@player.errors[:shirt_number].any? ? 'error' : '') do %>
+        <%= f.label :shirt_number %>
+        <%= f.text_field :shirt_number, placeholder: 'Shirt Number', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :preferred_foot %>
-      <%= f.text_field :preferred_foot, placeholder: 'Preferred Foot', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@player.errors[:preferred_foot].any? ? 'error' : '') do %>
+        <%= f.label :preferred_foot %>
+        <%= f.text_field :preferred_foot, placeholder: 'Preferred Foot', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
+    <%= content_tag :div, class: 'field ' + (@player.errors[:team].any? ? 'error' : '') do %>
       <%= f.label :team_id %>
       <%= f.collection_select :team_id, Team.all, :id, :name, { prompt: true }, { class: 'ui search selection dropdown' } %>
-    </div>
+    <% end %>
 
-    <%= f.submit class: 'ui right floated primary button' %>
+    <%= f.submit class: 'ui right floated green button' %>
 
 <% end %>

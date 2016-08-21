@@ -4,16 +4,14 @@
 
 window.GironeWeb.view ||= {}
 
-class GironeWeb.view.NewPlayerView extends GironeWeb.view.ApplicationView
+class GironeWeb.view.NewUserView extends GironeWeb.view.ApplicationView
   render: ->
-    Paloma.controller "Players",
+    Paloma.controller "Users",
       new: () =>
         super
-        @initializeDatepicker()
       # Handle incorrect form submissions which trigger template rendering  without url change
       create: () =>
         super
-        @initializeDatepicker()
 
-newPlayerView = new GironeWeb.view.NewPlayerView
-newPlayerView.render()
+newUserView = new GironeWeb.view.NewUserView
+newUserView.render()

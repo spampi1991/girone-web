@@ -4,11 +4,11 @@
 
 window.GironeWeb.view ||= {}
 
-class GironeWeb.view.ShowTeamView extends GironeWeb.view.ApplicationView
+class GironeWeb.view.ShowUserView extends GironeWeb.view.ApplicationView
   render: ->
-    Paloma.controller "Teams",
+    Paloma.controller "Users",
       show: () =>
         super
 
-showTeamView = new GironeWeb.view.ShowTeamView
-showTeamView.render()
+showUserView = new GironeWeb.view.ShowUserView
+showUserView.render()

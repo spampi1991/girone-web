@@ -1,36 +1,8 @@
 
-<% provide(:title, 'Sign up') %>
+<%= provide(:title, 'Sign up') %>
 
 <h1 class="ui center aligned header">
   Sign Up
 </h1>
 
-<%=  form_for @user, html: { class: 'ui form error'}  do |f| %>
-
-  <%= render 'users/error_messages' %>
-
-  <div class='field'>
-    <%= f.label :name %>
-    <%= f.text_field :name, placeholder: 'Username' %>
-  </div>
-
-  <div class='field'>
-    <%= f.label :email %>
-    <%= f.text_field :email, placeholder: 'Email' %>
-  </div>
-
-  <div class='field'>
-    <%= f.label :password %>
-    <%= f.text_field :password, placeholder: 'Password' %>
-  </div>
-
-  <div class='field'>
-    <%= f.label :password_confirmation %>
-    <%= f.text_field :password_confirmation, placeholder: 'Confirm Password' %>
-  </div>
-
-  <div class='ui center aligned container'>
-    <%= f.submit 'Create Account', class: 'ui button green' %>
-  </div>
-
-<% end %>
+<%= render 'users/form' %>

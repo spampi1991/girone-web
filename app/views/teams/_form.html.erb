@@ -1,32 +1,32 @@
 
-<%= form_for @team, html: { class: "ui form" } do |f| %>
+<%= form_for(@team, html: { class: 'ui form ' + (@team.errors.any? ? 'error' : '') }) do |f| %>
 
     <%= render 'teams/error_messages' %>
 
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name, placeholder: 'Name', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@team.errors[:name].any? ? 'error' : '') do %>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: 'Name', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :stadium %>
-      <%= f.text_field :stadium,  placeholder: 'Stadium', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@team.errors[:stadium].any? ? 'error' : '') do %>
+        <%= f.label :stadium %>
+        <%= f.text_field :stadium, placeholder: 'Stadium', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :address %>
-      <%= f.text_field :address,  placeholder: 'Address', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@team.errors[:address].any? ? 'error' : '') do %>
+        <%= f.label :address %>
+        <%= f.text_field :address, placeholder: 'Address', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :telephone %>
-      <%= f.telephone_field :telephone,  placeholder: 'Telephone', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@team.errors[:telephone].any? ? 'error' : '') do %>
+        <%= f.label :telephone %>
+        <%= f.telephone_field :telephone, placeholder: 'Telephone', autocomplete: 'off' %>
+    <% end %>
 
-    <div class="field">
-      <%= f.label :pitch_type %>
-      <%= f.text_field :pitch_type,  placeholder: 'Pitch Type', autocomplete: 'off' %>
-    </div>
+    <%= content_tag :div, class: 'field ' + (@team.errors[:pitch_type].any? ? 'error' : '') do %>
+        <%= f.label :pitch_type %>
+        <%= f.text_field :pitch_type, placeholder: 'Pitch Type', autocomplete: 'off' %>
+    <% end %>
 
     <%= f.submit class: 'ui right floated primary button' %>
 

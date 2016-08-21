@@ -10,6 +10,10 @@ class GironeWeb.view.EditPlayerView extends GironeWeb.view.ApplicationView
       edit: () =>
         super
         @initializeDatepicker()
+      # Handle incorrect form submissions which trigger template rendering  without url change
+      update: () =>
+        super
+        @initializeDatepicker()
 
 editPlayerView = new GironeWeb.view.EditPlayerView
 editPlayerView.render()

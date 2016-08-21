@@ -1,0 +1,30 @@
+
+<%=  form_for(@user, url: signup_path, html: { class: (@user.errors.any? ? 'ui form error' : 'ui form') })  do |f| %>
+
+    <%= render 'users/error_messages' %>
+
+    <%= content_tag :div, class: (@user.errors[:name].any? ? 'field error' : 'field') do %>
+        <%= f.label :name %>
+        <%= f.text_field :name, placeholder: 'Name' %>
+    <% end %>
+
+    <%= content_tag :div, class: (@user.errors[:email].any? ? 'field error' : 'field') do %>
+        <%= f.label :email %>
+        <%= f.text_field :email, placeholder: 'Email' %>
+    <% end %>
+
+    <%= content_tag :div, class: (@user.errors[:password].any? ? 'field error' : 'field') do %>
+        <%= f.label :password %>
+        <%= f.text_field :password, placeholder: 'Password' %>
+    <% end %>
+
+    <%= content_tag :div, class: (@user.errors[:password_confirmation].any? ? 'field error' : 'field') do %>
+        <%= f.label :password_confirmation %>
+        <%= f.text_field :password_confirmation, placeholder: 'Confirm Password' %>
+    <% end %>
+
+    <div class='ui center aligned container'>
+      <%= f.submit 'Create Account', class: 'ui button green' %>
+    </div>
+
+<% end %>
