@@ -9,6 +9,7 @@
   <body>
   <%= render 'layouts/header' %>
   <div class="ui container" style="margin-top: 5%">
+    <%= render 'layouts/flash_messages' %>
     <%= render 'layouts/breadcrumbs' %>
     <%= yield %>
     <%= insert_paloma_hook %>

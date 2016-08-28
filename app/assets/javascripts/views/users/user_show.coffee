@@ -9,6 +9,8 @@ class GironeWeb.view.ShowUserView extends GironeWeb.view.ApplicationView
     Paloma.controller "Users",
       show: () =>
         super
+        @initializeMessage()
+
 
 showUserView = new GironeWeb.view.ShowUserView
 showUserView.render()
