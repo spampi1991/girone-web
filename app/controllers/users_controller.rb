@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = { :header => 'Your user registration was successful.', :content => 'You may now log-in with the username you have chosen' }
       redirect_to @user
     else

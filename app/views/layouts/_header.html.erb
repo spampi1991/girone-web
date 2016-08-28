@@ -21,9 +21,16 @@
 
   <div class="right menu">
     <div class="item">
-      <!--<div class="ui primary button">Sign Up</div>-->
       <%= link_to 'Sign Up', signup_path, class: 'ui primary button' %>
     </div>
+    <% if logged_in? %>
+        <div class="item">
+          <%= link_to 'Log Out', logout_path, method: :delete, class: 'ui red button' %>
+        </div>
+    <% else %>
+        <div class="item">
+          <%= link_to 'Log In', login_path, class: 'ui green button' %>
+        </div>
+    <% end %>
   </div>
-
 </div>

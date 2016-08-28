@@ -3,9 +3,17 @@
       <div class="ui positive message">
         <i class="close icon"></i>
         <div class="header">
-          <%= message['header'] %>
+          <%= message[:header] %>
         </div>
-        <p><%= message['content'] %></p>
+        <p><%= message[:content] %></p>
       </div>
+    <% elsif message_type == 'danger' %>
+        <div class="ui negative message">
+          <i class="close icon"></i>
+          <div class="header">
+            <%= message[:header] %>
+          </div>
+          <p><%= message[:content] %></p>
+        </div>
     <% end %>
 <% end %>
