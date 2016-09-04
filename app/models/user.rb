@@ -7,6 +7,8 @@ class User < ApplicationRecord
   has_and_belongs_to_many :roles
   has_many :posts
 
+  mount_uploader :avatar, AvatarUploader
+
   def self.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cosy
     BCrypt::Password.create(string, cost: cost)

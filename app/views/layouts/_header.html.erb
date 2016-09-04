@@ -1,36 +1,90 @@
-<div class="ui top fixed small menu">
-
-  <div class="header item">Girone Web</div>
-
-  <%= link_to root_path, class: 'item' do %>
-      <i class="home icon"></i> Home
-  <% end %>
-
-  <div class="ui dropdown item">
-    <i class="settings icon"></i> Admin
-    <i class="dropdown icon"></i>
-    <div class="menu">
-      <%= link_to teams_path, class: 'item' do %>
-          Teams
-      <% end %>
-      <%= link_to players_path, class: 'item' do %>
-          Players
-      <% end %>
-    </div>
+<div class="ui small top fixed menu">
+  <div class="ui container">
+  <div class="header item">
+    <%= image_tag('football_logo_32.png', class: 'ui mini image') %>
   </div>
 
-  <div class="right menu">
-    <div class="item">
-      <%= link_to 'Sign Up', signup_path, class: 'ui primary button' %>
-    </div>
-    <% if logged_in? %>
-        <div class="item">
-          <%= link_to 'Log Out', logout_path, method: :delete, class: 'ui red button' %>
-        </div>
-    <% else %>
-        <div class="item">
-          <%= link_to 'Log In', login_path, class: 'ui green button' %>
-        </div>
+    <%= link_to root_path, class: 'item' do %>
+        <i class="home icon"></i> Home
     <% end %>
+
+    <%= link_to root_path, class: 'item' do %>
+        News
+    <% end %>
+
+    <div class="ui dropdown item">
+      Stagione
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <%= link_to players_path, class: 'item' do %>
+            Calendario
+        <% end %>
+        <%= link_to players_path, class: 'item' do %>
+            Risultati
+        <% end %>
+        <%= link_to root_path, class: 'item' do %>
+            Classifica
+        <% end %>
+      </div>
+    </div>
+
+    <div class="ui dropdown item">
+      Club
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <%= link_to players_path, class: 'item' do %>
+            Rosa
+        <% end %>
+        <%= link_to players_path, class: 'item' do %>
+            Storia
+        <% end %>
+        <%= link_to root_path, class: 'item' do %>
+            Dove Siamo
+        <% end %>
+      </div>
+    </div>
+
+
+    <div class="ui dropdown item">
+      Admin
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <%= link_to teams_path, class: 'item' do %>
+            Teams
+        <% end %>
+        <%= link_to players_path, class: 'item' do %>
+            Players
+        <% end %>
+      </div>
+    </div>
+
+    <div class="right menu">
+      <% if logged_in? %>
+          <div class="item">
+            <div class="ui dropdown ">
+              <div class="text">
+                <%= image_tag('default_avatar.png', class: 'ui avatar image') %>
+                <%= current_user.name %>
+              </div>
+              <i class="dropdown icon"></i>
+              <div class="menu">
+                <%= link_to @current_user, class: 'item' do %>
+                    Profile
+                <% end %>
+                <%= link_to logout_path, class: 'item', method: :delete do %>
+                    Log Out
+                <% end %>
+              </div>
+            </div>
+          </div>
+      <% else %>
+          <div class="item">
+            <%= link_to 'Sign Up', signup_path, class: 'ui mini green button' %>
+          </div>
+          <div class="item">
+            <%= link_to 'Log In', login_path, class: 'ui mini blue button' %>
+          </div>
+      <% end %>
+    </div>
   </div>
 </div>
