@@ -32,6 +32,7 @@ gem 'paloma', '~> 5.0.0'
 gem 'bcrypt'
 # This gem provides a simple and extremely flexible way to upload files from Ruby applications.
 gem 'carrierwave'
+gem 'devise'
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

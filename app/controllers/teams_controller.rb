@@ -1,4 +1,7 @@
 class TeamsController < ApplicationController
+
+  before_action :authenticate_user!
+
   def index
     if params[:search]
       @teams = Team.search(params[:search]).page params[:page]
