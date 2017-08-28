@@ -1,8 +1,8 @@
 <% if @player.errors.any? %>
-    <div class="ui error message">
-      <div class="header">
+    <div class="alert alert-danger" role="alert">
+      <h4  class="alert-heading">
         <%= pluralize(@player.errors.count, 'error') %> prohibited this player from being saved.
-      </div>
+      </h4 >
       <ul>
         <%= @player.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>

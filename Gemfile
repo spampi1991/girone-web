@@ -1,19 +1,19 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.3'
 # Use PostgreSQL as the database for ActiveRecord in production
 gem 'pg'
 # Use Puma as the app server
-gem 'puma', '~> 3.0'
+gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'
-# Semantic empowers designers and developers by creating a shared vocabulary for UI.
-gem 'rails-assets-semantic', source: 'http://insecure.rails-assets.org'
+# Bootstrap 4 ruby gem for Ruby on Rails (Sprockets) and Compass.
+gem 'bootstrap', '~> 4.0.0.beta'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # jQuery UI's JavaScript, CSS, and image files
@@ -24,14 +24,9 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 # A Scope & Engine based, clean, powerful, customizable and sophisticated paginator for modern web app frameworks and ORMs
 gem 'kaminari'
-# Handle breadcrumb trails like a boss
-gem "gretel"
-# Page-specific javascript for Rails done right.
-gem 'paloma', '~> 5.0.0'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-# This gem provides a simple and extremely flexible way to upload files from Ruby applications.
-gem 'carrierwave'
+
 gem 'devise'
 
 # Use Redis adapter to run Action Cable in production

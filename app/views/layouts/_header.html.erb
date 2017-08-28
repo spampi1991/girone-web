@@ -1,84 +1,13 @@
-<div class="ui small top fixed menu">
-  <div class="ui container">
-  <div class="header item">
-    <%= image_tag('football_logo_32.png', class: 'ui mini image') %>
-  </div>
-
-    <%= link_to root_path, class: 'item' do %>
-        <i class="home icon"></i> Home
-    <% end %>
-
-    <%= link_to root_path, class: 'item' do %>
-        News
-    <% end %>
-
-    <div class="ui dropdown item">
-      Stagione
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <%= link_to players_path, class: 'item' do %>
-            Calendario
-        <% end %>
-        <%= link_to players_path, class: 'item' do %>
-            Risultati
-        <% end %>
-        <%= link_to root_path, class: 'item' do %>
-            Classifica
-        <% end %>
-      </div>
-    </div>
-
-    <div class="ui dropdown item">
-      Club
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <%= link_to players_path, class: 'item' do %>
-            Rosa
-        <% end %>
-        <%= link_to players_path, class: 'item' do %>
-            Storia
-        <% end %>
-        <%= link_to root_path, class: 'item' do %>
-            Dove Siamo
-        <% end %>
-      </div>
-    </div>
-
-
-    <div class="ui dropdown item">
-      Admin
-      <i class="dropdown icon"></i>
-      <div class="menu">
-        <%= link_to teams_path, class: 'item' do %>
-            Teams
-        <% end %>
-        <%= link_to players_path, class: 'item' do %>
-            Players
-        <% end %>
-      </div>
-    </div>
-
-    <div class="right menu">
-      <% if user_signed_in? %>
-          <div class="item">
-            <div class="ui dropdown ">
-              <div class="text">
-                <%= image_tag('default_avatar.png', class: 'ui avatar image') %>
-                <%= current_user.email %>
-              </div>
-              <i class="dropdown icon"></i>
-              <div class="menu">
-                <%= link_to destroy_user_session_path, class: 'item', method: :delete do %>
-                    Esci
-                <% end %>
-              </div>
-            </div>
-          </div>
-      <% else %>
-          <div class="item">
-            <%= link_to 'Accedi', new_user_session_path, class: 'ui mini blue button' %>
-          </div>
-      <% end %>
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+  <a class="navbar-brand" href="#">Girone</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <%= link_to 'Home', root_path, class: 'nav-item nav-link' %>
+      <%= link_to 'Teams', teams_path, class: 'nav-item nav-link' %>
+      <%= link_to 'Players', players_path, class: 'nav-item nav-link' %>
     </div>
   </div>
-</div>
+</nav>

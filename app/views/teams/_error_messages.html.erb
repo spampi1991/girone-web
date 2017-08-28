@@ -1,8 +1,8 @@
 <% if @team.errors.any? %>
-    <div class="ui error message">
-      <div class="header">
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">
         <%= pluralize(@team.errors.count, 'error') %> prohibited this team from being saved.
-      </div>
+      </h4>
       <ul>
         <%= @team.errors.full_messages.each do |msg| %>
             <li><%= msg %></li>

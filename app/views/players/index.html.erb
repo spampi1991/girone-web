@@ -1,44 +1,23 @@
 
-<% breadcrumb :players, @players %>
-
-<br>
-<br>
-
-<table class="ui selectable striped table">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Surname</th>
-      <th>Birthday</th>
-      <th>Role</th>
-      <th>Team</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="row">
   <% @players.each do |player| %>
-      <tr>
-        <td><%= player.name %></td>
-        <td><%= player.surname %></td>
-        <td><%= player.birthday %></td>
-        <td><%= player.role %></td>
-        <td><%= player.team.name %></td>
-        <td class="center aligned"><%= link_to "Show", player_path(player), class: 'ui teal button' %></td>
-        <td class="center aligned"><%= link_to "Edit", edit_player_path(player), class: 'ui yellow button' %></td>
-        <td class="center aligned"><%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: 'ui red button' %></td>
-      </tr>
+      <div class="col-sm-4">
+        <div class="card" style="margin-top: 10px;">
+          <div class="card-body">
+            <h4 class="card-title"><%= player.name %> <%= player.surname %></h4>
+            <h6 class="card-subtitle mb-2 text-muted"><%= player.role %></h6>
+            <%= link_to "Show", player_path(player), class: 'card-link' %>
+            <%= link_to "Edit", edit_player_path(player), class: 'card-link' %>
+            <%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: 'card-link' %>
+          </div>
+        </div>
+      </div>
   <% end %>
-  </tbody>
-  <tfoot class="full-width">
-    <tr>
-      <th colspan="8">
-        <%= link_to "Add Player", new_player_path, class: 'ui left floated primary button' %>
-      </th>
-    </tr>
-  </tfoot>
-</table>
+</div>
+
+<br>
+
+<%= link_to "Add Player", new_player_path %>
 
 <%= paginate @players %>
 

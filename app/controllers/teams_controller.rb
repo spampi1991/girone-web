@@ -1,14 +1,8 @@
 class TeamsController < ApplicationController
 
-  before_action :authenticate_user!
-
   def index
-    if params[:search]
-      @teams = Team.search(params[:search]).page params[:page]
-    else
       @teams = Team.order(:name).page params[:page]
-    end
-  end
+      end
 
   def show
     @team = Team.find(params[:id])

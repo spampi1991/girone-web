@@ -1,20 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>GironeWeb</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
   <body>
   <%= render 'layouts/header' %>
-  <div class="ui container" style="margin-top: 5%">
-    <%= render 'layouts/flash_messages' %>
-    <%= render 'layouts/breadcrumbs' %>
+  <div class="container">
     <%= yield %>
-    <%= insert_paloma_hook %>
-    <%= render 'layouts/footer' %>
-    <%# debug(params) if Rails.env.development? %>
   </div>
   </body>
 </html>

@@ -1,7 +1,5 @@
 class PlayersController < ApplicationController
 
-  before_action :authenticate_user!
-
   def index
     @players = Player.order(:role).page params[:page]
   end
