@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
-
+gem 'carrierwave'
 gem 'devise'
 
 # Use Redis adapter to run Action Cable in production

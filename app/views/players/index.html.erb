@@ -3,12 +3,16 @@
   <% @players.each do |player| %>
       <div class="col-sm-4">
         <div class="card" style="margin-top: 10px;">
+          <img class="card-img-top" src="<%= player.avatar_url %>">
           <div class="card-body">
             <h4 class="card-title"><%= player.name %> <%= player.surname %></h4>
             <h6 class="card-subtitle mb-2 text-muted"><%= player.role %></h6>
-            <%= link_to "Show", player_path(player), class: 'card-link' %>
-            <%= link_to "Edit", edit_player_path(player), class: 'card-link' %>
-            <%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: 'card-link' %>
+            <p class="card-text"><%= player.description %></p>
+            <% if user_signed_in? %>
+                <%= link_to "Show", player_path(player), class: 'card-link' %>
+                <%= link_to "Edit", edit_player_path(player), class: 'card-link' %>
+                <%= link_to "Remove", player_path(player), method: :delete, data: { confirm: "Are you sure?" }, class: 'card-link' %>
+            <% end %>
           </div>
         </div>
       </div>
@@ -17,9 +21,10 @@
 
 <br>
 
-<%= link_to "Add Player", new_player_path %>
+<% if user_signed_in? %>
+    <%= link_to "Add Player", new_player_path %>
+<% end %>
 
-<%= paginate @players %>
 
 
 

@@ -1,13 +1,30 @@
-<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="#">Girone</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+
+<nav class="navbar navbar-expand-lg navbar-light fixed-top bg-light">
+  <%= link_to 'Girone', root_path, class: 'navbar-brand' %>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <%= link_to 'Home', root_path, class: 'nav-item nav-link' %>
-      <%= link_to 'Teams', teams_path, class: 'nav-item nav-link' %>
-      <%= link_to 'Players', players_path, class: 'nav-item nav-link' %>
-    </div>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <%= link_to t('players'), players_path, class: 'nav-link' %>
+      </li>
+      <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('admin') %></a>
+            <div class="dropdown-menu">
+              <%= link_to t('teams'), teams_path, class: 'dropdown-item' %>
+            </div>
+          </li>
+      <% end %>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <% if user_signed_in? %>
+          <%= link_to t('sign_out'), destroy_user_session_path, method: :delete, class: 'btn btn-outline-danger my-2 my-sm-0' %>
+      <% else %>
+          <%= link_to t('sign_in'), new_user_session_path, class: 'btn btn-outline-success my-2 my-sm-0' %>
+      <% end %>
+    </form>
   </div>
 </nav>

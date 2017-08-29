@@ -19,9 +19,10 @@
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
 
-en:
-  players: "Players and Staff"
-  teams: "Teams"
-  sign_in: "Login"
-  sign_out: "Logout"
-  admin: "Admin"
+it:
+  players: "Rosa e Staff"
+  teams: "Squadre"
+  sign_in: "Accedi"
+  sign_out: "Esci"
+  admin: "Amministrazione"
+

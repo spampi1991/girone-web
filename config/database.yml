@@ -20,5 +20,5 @@ production:
   encoding: UTF8
   database: gironeweb
   pool: 10
-  username: postgres
-  password: admin
+  username: gironeweb
+  password: gironeweb

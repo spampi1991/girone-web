@@ -1,5 +1,5 @@
 
-<%= form_for(@player) do |f| %>
+<%= form_for @player, html: { multipart: true } do |f| %>
 
     <%= render 'players/error_messages' %>
 
@@ -14,13 +14,18 @@
     <% end %>
 
     <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :description %>
+        <%= f.text_field :description, placeholder: 'Description', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
         <%= f.label :birthday %>
-        <%= f.date_select :birthday, placeholder: 'Birthday', class: 'form-control', order: [:day, :month, :year], start_year: 1900 %>
+        <%= f.date_select :birthday, placeholder: 'Birthday', class: 'form-control', order: [:day, :month, :year], start_year: 1900, use_month_numbers: true %>
     <% end %>
 
     <%= content_tag :div, class: 'form-group' do %>
         <%= f.label :role %>
-        <%= f.text_field :role, placeholder: 'Role', autocomplete: 'off', class: 'form-control' %>
+        <%= f.select :role, ['Portiere', 'Difensore', 'Centrocampista', 'Attaccante', 'Staff'], {}, { class: 'form-control' } %>
     <% end %>
 
     <%= content_tag :div, class: 'form-group' do %>
@@ -36,6 +41,12 @@
     <%= content_tag :div, class: 'form-group' do %>
       <%= f.label :team_id %>
       <%= f.collection_select :team_id, Team.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :avatar %>
+        <%= image_tag(@player.avatar_url) if @player.avatar? %>
+        <%= f.file_field :avatar %>
     <% end %>
 
     <%= f.submit class: 'btn btn-primary' %>
