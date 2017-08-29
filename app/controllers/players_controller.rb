@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   def index
-    @players = Player.order(:role).page params[:page]
+    @players = Player.order(:role, :surname).page params[:page]
   end
 
   def show
