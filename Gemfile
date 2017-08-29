@@ -27,7 +27,10 @@ gem 'kaminari'
 # Use ActiveModel has_secure_password
 gem 'bcrypt'
 gem 'carrierwave'
+gem 'fog-aws'
 gem 'devise'
+#Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
+gem "figaro"
 
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 3.0'

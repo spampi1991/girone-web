@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828195621) do
+ActiveRecord::Schema.define(version: 20170829153040) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,22 @@ ActiveRecord::Schema.define(version: 20170828195621) do
     t.string "avatar"
     t.string "description"
     t.index ["team_id"], name: "index_players_on_team_id"
+  end
+
+  create_table "rankings", force: :cascade do |t|
+    t.integer "victories"
+    t.integer "defeats"
+    t.integer "draws"
+    t.integer "games"
+    t.integer "goals_scored"
+    t.integer "goals_suffered"
+    t.integer "points"
+    t.bigint "team_id"
+    t.bigint "season_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["season_id"], name: "index_rankings_on_season_id"
+    t.index ["team_id"], name: "index_rankings_on_team_id"
   end
 
   create_table "roles", id: :serial, force: :cascade do |t|
@@ -94,4 +110,6 @@ ActiveRecord::Schema.define(version: 20170828195621) do
   add_foreign_key "events", "teams", column: "away_team_id"
   add_foreign_key "events", "teams", column: "local_team_id"
   add_foreign_key "players", "teams"
+  add_foreign_key "rankings", "seasons"
+  add_foreign_key "rankings", "teams"
 end

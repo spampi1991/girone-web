@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'home#index'
   resources :players
   resources :teams
+  resources :seasons
 
   devise_for :users
 

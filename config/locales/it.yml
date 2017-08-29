@@ -22,6 +22,7 @@
 it:
   players: "Rosa e Staff"
   teams: "Squadre"
+  seasons: "Stagioni"
   sign_in: "Accedi"
   sign_out: "Esci"
   admin: "Amministrazione"
