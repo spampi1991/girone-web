@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170828195621) do
 
-  create_table "events", force: :cascade do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "events", id: :serial, force: :cascade do |t|
     t.date "event_date"
     t.integer "local_team_id"
     t.integer "away_team_id"
@@ -25,7 +28,7 @@ ActiveRecord::Schema.define(version: 20170828195621) do
     t.index ["season_id"], name: "index_events_on_season_id"
   end
 
-  create_table "players", force: :cascade do |t|
+  create_table "players", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "surname"
     t.date "birthday"
@@ -40,37 +43,27 @@ ActiveRecord::Schema.define(version: 20170828195621) do
     t.index ["team_id"], name: "index_players_on_team_id"
   end
 
-  create_table "posts", force: :cascade do |t|
-    t.string "title"
-    t.text "content"
-    t.datetime "published_at"
-    t.integer "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_posts_on_user_id"
-  end
-
-  create_table "roles", force: :cascade do |t|
+  create_table "roles", id: :serial, force: :cascade do |t|
     t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   create_table "roles_users", id: false, force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.integer "role_id", null: false
+    t.bigint "user_id", null: false
+    t.bigint "role_id", null: false
     t.index ["role_id"], name: "index_roles_users_on_role_id"
     t.index ["user_id"], name: "index_roles_users_on_user_id"
   end
 
-  create_table "seasons", force: :cascade do |t|
+  create_table "seasons", id: :serial, force: :cascade do |t|
     t.integer "year"
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "teams", force: :cascade do |t|
+  create_table "teams", id: :serial, force: :cascade do |t|
     t.string "name"
     t.string "stadium"
     t.string "address"
@@ -80,7 +73,7 @@ ActiveRecord::Schema.define(version: 20170828195621) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", id: :serial, force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -97,4 +90,8 @@ ActiveRecord::Schema.define(version: 20170828195621) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "events", "seasons"
+  add_foreign_key "events", "teams", column: "away_team_id"
+  add_foreign_key "events", "teams", column: "local_team_id"
+  add_foreign_key "players", "teams"
 end
