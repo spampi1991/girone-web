@@ -1,0 +1,53 @@
+
+<%= form_for(@ranking) do |f| %>
+
+    <%= render 'rankings/error_messages' %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :season_id %>
+        <%= f.collection_select :season_id, Season.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :team_id %>
+        <%= f.collection_select :team_id, Team.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :games %>
+        <%= f.number_field :games, placeholder: 'Games', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :victories %>
+        <%= f.number_field :victories, placeholder: 'Victories', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :draws %>
+        <%= f.number_field :draws, placeholder: 'Draws', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :defeats %>
+        <%= f.number_field :defeats, placeholder: 'Defeats', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :goals_scored %>
+        <%= f.number_field :goals_scored, placeholder: 'Goal scored', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :goals_suffered %>
+        <%= f.number_field :goals_suffered, placeholder: 'Goal suffered', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :points %>
+        <%= f.number_field :points, placeholder: 'Points', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= f.submit class: 'btn btn-primary' %>
+
+<% end %>

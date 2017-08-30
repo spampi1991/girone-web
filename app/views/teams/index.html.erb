@@ -1,38 +1,39 @@
 
 <table class="table">
+
   <thead>
   <tr>
-    <th>Name</th>
-    <th>Stadium</th>
-    <th>Address</th>
-    <th>Telephone</th>
-    <th>Pitch Type</th>
+    <th></th>
+    <th>Nome</th>
+    <th>Stadio</th>
+    <th>Indirizzo</th>
+    <th>Telefono</th>
+    <th>Campo</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
   </thead>
+
   <tbody>
   <% @teams.each do |team| %>
       <tr>
+        <td><img style="height: 2em;" src="<%= team.avatar_url %>"></td>
         <td><%= team.name %></td>
         <td><%= team.stadium %></td>
         <td><%= team.address %></td>
         <td><%= team.telephone %></td>
         <td><%= team.pitch_type %></td>
-        <td><%= link_to "Show", team_path(team), class: 'btn btn-info' %></td>
-        <td><%= link_to "Edit", edit_team_path(team), class: 'btn btn-warning' %></td>
-        <td><%= link_to "Remove", team_path(team), method: :delete, data: { confirm: "Are you sure?" }, class: 'btn btn-danger' %></td>
+        <td><%= link_to "Show", team_path(team) %></td>
+        <td><%= link_to "Edit", edit_team_path(team) %></td>
+        <td><%= link_to "Remove", team_path(team), method: :delete, data: { confirm: "Are you sure?" } %></td>
       </tr>
   <% end %>
   </tbody>
-  <tfoot>
-  <tr>
-    <th colspan="8">
-      <%= link_to "Add Team", new_team_path, class: 'btn btn-primary' %>
-    </th>
-  </tr>
-  </tfoot>
 </table>
 
 <%= paginate @teams %>
+
+<br>
+
+<%= link_to "Add Team", new_team_path %>

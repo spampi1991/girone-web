@@ -28,6 +28,12 @@
         <%= f.text_field :pitch_type, placeholder: 'Pitch Type', autocomplete: 'off', class: 'form-control' %>
     <% end %>
 
-    <%= f.submit class: 'btn btn-primary' %>
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :avatar %>
+        <%= image_tag(@team.avatar_url) if @team.avatar? %>
+        <%= f.file_field :avatar %>
+    <% end %>
+
+    <%= f.submit %>
 
 <% end %>

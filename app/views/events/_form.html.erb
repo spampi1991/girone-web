@@ -1,0 +1,38 @@
+
+<%= form_for(@event) do |f| %>
+
+    <%= render 'events/error_messages' %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :local_team_id %>
+        <%= f.collection_select :local_team_id, Team.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :away_team_id %>
+        <%= f.collection_select :away_team_id, Team.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :event_date %>
+        <%= f.date_select :event_date, placeholder: 'Birthday', class: 'form-control', order: [:day, :month, :year], start_year: 1900, use_month_numbers: true %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :season_id %>
+        <%= f.collection_select :season_id, Season.all, :id, :name, { prompt: true }, { class: 'form-control' } %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :local_team_goals %>
+        <%= f.number_field :local_team_goals, placeholder: 'Local team goals', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :away_team_goals %>
+        <%= f.number_field :away_team_goals, placeholder: 'Away team goals', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= f.submit class: 'btn btn-primary' %>
+
+<% end %>

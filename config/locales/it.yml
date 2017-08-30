@@ -23,7 +23,11 @@ it:
   players: "Rosa e Staff"
   teams: "Squadre"
   seasons: "Stagioni"
+  rankings: "Classifica"
+  events: "Calendario e Risultati"
   sign_in: "Accedi"
   sign_out: "Esci"
   admin: "Amministrazione"
+  season: "Stagione"
+  team: "Squadra"
 

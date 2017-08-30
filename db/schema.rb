@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170829153040) do
+ActiveRecord::Schema.define(version: 20170830171114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,6 +22,8 @@ ActiveRecord::Schema.define(version: 20170829153040) do
     t.integer "season_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "local_team_goals"
+    t.integer "away_team_goals"
     t.index ["away_team_id"], name: "index_events_on_away_team_id"
     t.index ["event_date", "season_id", "local_team_id", "away_team_id"], name: "event_logical_key", unique: true
     t.index ["local_team_id"], name: "index_events_on_local_team_id"
@@ -44,17 +46,18 @@ ActiveRecord::Schema.define(version: 20170829153040) do
   end
 
   create_table "rankings", force: :cascade do |t|
-    t.integer "victories"
-    t.integer "defeats"
-    t.integer "draws"
-    t.integer "games"
-    t.integer "goals_scored"
-    t.integer "goals_suffered"
-    t.integer "points"
+    t.integer "victories", default: 0, null: false
+    t.integer "defeats", default: 0, null: false
+    t.integer "draws", default: 0, null: false
+    t.integer "games", default: 0, null: false
+    t.integer "goals_scored", default: 0, null: false
+    t.integer "goals_suffered", default: 0, null: false
+    t.integer "points", default: 0, null: false
     t.bigint "team_id"
     t.bigint "season_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["season_id", "team_id"], name: "ranking_logical_key", unique: true
     t.index ["season_id"], name: "index_rankings_on_season_id"
     t.index ["team_id"], name: "index_rankings_on_team_id"
   end
@@ -87,6 +90,7 @@ ActiveRecord::Schema.define(version: 20170829153040) do
     t.string "pitch_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "avatar"
   end
 
   create_table "users", id: :serial, force: :cascade do |t|

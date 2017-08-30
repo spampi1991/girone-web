@@ -22,7 +22,11 @@
 en:
   players: "Players and Staff"
   teams: "Teams"
-  seasons: "Stagioni"
+  seasons: "Seasons"
+  rankings: "Rankings"
+  events: "Events"
   sign_in: "Login"
   sign_out: "Logout"
   admin: "Admin"
+  season: "Season"
+  team: "Team"

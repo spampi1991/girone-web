@@ -1,8 +1,7 @@
 class TeamsController < ApplicationController
-
   def index
-      @teams = Team.order(:name).page params[:page]
-      end
+    @teams = Team.order(:name).page params[:page]
+  end
 
   def show
     @team = Team.find(params[:id])
@@ -40,11 +39,17 @@ class TeamsController < ApplicationController
     @team = Team.find(params[:id])
     @team.destroy
 
-    redirect_to admin_teams_path
+    redirect_to teams_path
   end
 
   private
-    def team_params
-      params.require(:team).permit(:name, :stadium, :address, :telephone, :pitch_type)
-    end
+
+  def team_params
+    params.require(:team).permit(:name,
+                                 :stadium,
+                                 :address,
+                                 :telephone,
+                                 :pitch_type,
+                                  :avatar)
+  end
 end

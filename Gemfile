@@ -29,6 +29,7 @@ gem 'bcrypt'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'devise'
+gem 'devise-i18n'
 #Simple, Heroku-friendly Rails app configuration using ENV and a single YAML file
 gem "figaro"
 

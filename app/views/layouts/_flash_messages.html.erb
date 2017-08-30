@@ -1,19 +1,5 @@
-<% flash.each do |message_type, message|  %>
-    <% if message_type == 'success' %>
-      <div class="ui positive message">
-        <i class="close icon"></i>
-        <div class="header">
-          <%= message[:header] %>
-        </div>
-        <p><%= message[:content] %></p>
-      </div>
-    <% elsif message_type == 'danger' %>
-        <div class="ui negative message">
-          <i class="close icon"></i>
-          <div class="header">
-            <%= message[:header] %>
-          </div>
-          <p><%= message[:content] %></p>
-        </div>
-    <% end %>
+<% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %>" role="alert">
+      <%= value %>
+    </div>
 <% end %>

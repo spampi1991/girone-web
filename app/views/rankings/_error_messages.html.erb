@@ -1,0 +1,12 @@
+<% if @ranking.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <h4  class="alert-heading">
+        <%= pluralize(@ranking.errors.count, 'error') %> prohibited this ranking from being saved.
+      </h4 >
+      <ul>
+        <%= @ranking.errors.full_messages.each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+<% end %>

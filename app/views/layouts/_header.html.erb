@@ -7,8 +7,18 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <%= link_to t('players'), players_path, class: 'nav-link' %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('season') %></a>
+        <div class="dropdown-menu">
+          <%= link_to t('events'), events_path, class: 'dropdown-item' %>
+          <%= link_to t('rankings'), rankings_path, class: 'dropdown-item' %>
+        </div>
+      </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false"><%= t('team') %></a>
+        <div class="dropdown-menu">
+          <%= link_to t('players'), players_path, class: 'nav-link' %>
+        </div>
       </li>
       <% if user_signed_in? %>
           <li class="nav-item dropdown">
