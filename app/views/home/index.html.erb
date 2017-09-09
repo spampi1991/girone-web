@@ -1,5 +1,66 @@
-<div class="jumbotron">
-  <h1>Navbar example</h1>
-  <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser's viewport.</p>
-  <a class="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs &raquo;</a>
+<div class="row">
+    <div class="col-sm-6">
+      <div class="card text-center" style="margin-top: 10px;">
+        <div class="card-header">
+          Classifica
+        </div>
+        <div class="card-body">
+          <% if @actual_ranking.blank? %>
+              <p class="card-text">Classifica non disponibile</p>
+          <% else %>
+              <table class="table">
+                <thead>
+                <tr>
+                  <th></th>
+                  <th>PG</th>
+                  <th>V</th>
+                  <th>N</th>
+                  <th>P</th>
+                  <th>PTI</th>
+                </tr>
+                </thead>
+                <tbody>
+                <% @actual_ranking.each do |ranking| %>
+                    <% if ranking.team.name == 'Girone' %>
+                        <tr class="table-success">
+                    <% else %>
+                        <tr>
+                    <% end %>
+                      <td><img style="height: 2em;" src="<%= ranking.team.avatar_url %>"></td>
+                      <td><%= ranking.games %></td>
+                      <td><%= ranking.victories %></td>
+                      <td><%= ranking.draws %></td>
+                      <td><%= ranking.defeats %></td>
+                      <td><%= ranking.points %></td>
+                    </tr>
+                <% end %>
+                </tbody>
+              </table>
+          <% end %>
+          <%= link_to t('rankings'), rankings_path, class: 'btn btn-primary' %>
+        </div>
+        <div class="card-footer text-muted">
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6">
+      <div class="card text-center" style="margin-top: 10px;">
+        <div class="card-header">
+          Prossima partita
+        </div>
+        <div class="card-body">
+          <% if @next_event.blank? %>
+              <p class="card-text">Nessun evento in programma</p>
+          <% else %>
+              <img src="<%= @next_event.local_team.avatar_url %>" class="rounded float-left">
+              <img src="<%= @next_event.away_team.avatar_url %>" class="rounded float-right">
+              <h4 class="card-title"><%= @next_event.local_team.stadium %></h4>
+              <h6 class="card-subtitle mb-2 text-muted"><%= @next_event.local_team.address %></h6>
+              <p class="card-text"><%= @next_event.event_date.strftime("%d/%m/%Y %H:%M") %></p>
+          <% end %>
+          <%= link_to t('events'), events_path, class: 'btn btn-primary' %>
+        </div>
+        <div class="card-footer text-muted"></div>
+      </div>
+    </div>
 </div>

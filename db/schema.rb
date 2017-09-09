@@ -10,13 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170830171114) do
+ActiveRecord::Schema.define(version: 20170831163201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "events", id: :serial, force: :cascade do |t|
-    t.date "event_date"
+    t.datetime "event_date"
     t.integer "local_team_id"
     t.integer "away_team_id"
     t.integer "season_id"

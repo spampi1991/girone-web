@@ -7,4 +7,8 @@ class Event < ApplicationRecord
 
   scope :of_season, ->(season) { where('season_id = ?', season) }
 
+  def self.next_event
+    where('event_date > ?', DateTime.now).order(event_date: :asc).first
+  end
+
 end

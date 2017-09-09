@@ -3,4 +3,7 @@ class Season < ApplicationRecord
 
   has_many :events
   has_many :rankings
+
+  scope :current, -> { order(year: :desc).first }
+
 end

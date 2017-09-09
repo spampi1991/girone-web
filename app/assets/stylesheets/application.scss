@@ -2,6 +2,10 @@
 @import "bootstrap";
 @import "home";
 
+.alert-error{
+  @extend .alert-danger;
+}
+
 
 
 
