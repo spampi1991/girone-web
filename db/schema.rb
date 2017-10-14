@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170831163201) do
+ActiveRecord::Schema.define(version: 20171014161005) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,7 @@ ActiveRecord::Schema.define(version: 20170831163201) do
     t.bigint "season_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "goals_difference"
     t.index ["season_id", "team_id"], name: "ranking_logical_key", unique: true
     t.index ["season_id"], name: "index_rankings_on_season_id"
     t.index ["team_id"], name: "index_rankings_on_team_id"

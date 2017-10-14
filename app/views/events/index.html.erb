@@ -9,8 +9,10 @@
 <table class="table table-responsive">
   <thead>
     <tr>
+      <th></th>
       <th>Squadra</th>
       <th>Goals</th>
+      <th></th>
       <th>Squadra</th>
       <th>Goals</th>
       <th>Data</th>
@@ -24,8 +26,10 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
+        <td><img style="height: 2em;" src="<%= event.local_team.avatar_url %>"></td>
         <td><%= event.local_team.name %></td>
         <td><%= event.local_team_goals %></td>
+        <td><img style="height: 2em;" src="<%= event.away_team.avatar_url %>"></td>
         <td><%= event.away_team.name %></td>
         <td><%= event.away_team_goals %></td>
         <td><%= event.event_date %></td>

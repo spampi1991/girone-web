@@ -9,7 +9,6 @@
 <table class="table table-responsive">
   <thead>
   <tr>
-    <th>Stagione</th>
     <th></th>
     <th>Squadra</th>
     <th>PG</th>
@@ -18,6 +17,7 @@
     <th>P</th>
     <th>GF</th>
     <th>GS</th>
+    <th>DR</th>
     <th>PTI</th>
     <th></th>
     <th></th>
@@ -28,7 +28,6 @@
   <tbody>
     <% @rankings.each do |ranking| %>
       <tr>
-        <td><%= ranking.season.name %></td>
         <td><img style="height: 2em;" src="<%= ranking.team.avatar_url %>"></td>
         <td><%= ranking.team.name %></td>
         <td><%= ranking.games %></td>
@@ -37,6 +36,7 @@
         <td><%= ranking.defeats %></td>
         <td><%= ranking.goals_scored %></td>
         <td><%= ranking.goals_suffered %></td>
+        <td><%= ranking.goals_difference %></td>
         <td><%= ranking.points %></td>
         <% if user_signed_in? %>
           <td><%= link_to 'Show', ranking %></td>

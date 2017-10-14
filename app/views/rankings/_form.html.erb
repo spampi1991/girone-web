@@ -48,6 +48,11 @@
         <%= f.number_field :points, placeholder: 'Points', autocomplete: 'off', class: 'form-control' %>
     <% end %>
 
+    <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :goals_difference %>
+        <%= f.number_field :goals_difference, placeholder: 'Points', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
     <%= f.submit class: 'btn btn-primary' %>
 
 <% end %>

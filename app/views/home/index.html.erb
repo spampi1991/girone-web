@@ -53,30 +53,32 @@
         <% if @actual_ranking.blank? %>
             <p class="card-text">Classifica non disponibile</p>
         <% else %>
-            <table class="table">
+            <table class="table table-responsive">
               <thead>
-              <tr>
-                <th></th>
-                <th>PG</th>
-                <th>V</th>
-                <th>N</th>
-                <th>P</th>
-                <th>PTI</th>
-              </tr>
+                <tr>
+                  <th></th>
+                  <th>Squadra</th>
+                  <th>PG</th>
+                  <th>V</th>
+                  <th>N</th>
+                  <th>P</th>
+                  <th>PTI</th>
+                </tr>
               </thead>
               <tbody>
               <% @actual_ranking.each do |ranking| %>
-                  <% if ranking.team.name == 'Girone' %>
-                      <tr class="table-success">
-                  <% else %>
-                      <tr>
-                  <% end %>
-                  <td><img style="height: 2em;" src="<%= ranking.team.avatar_url %>"></td>
-                  <td><%= ranking.games %></td>
-                  <td><%= ranking.victories %></td>
-                  <td><%= ranking.draws %></td>
-                  <td><%= ranking.defeats %></td>
-                  <td><%= ranking.points %></td>
+                    <% if ranking.team.name == 'Girone' %>
+                        <tr class="table-success">
+                    <% else %>
+                        <tr>
+                    <% end %>
+                    <td><img style="height: 2em;" src="<%= ranking.team.avatar_url %>"></td>
+                    <td><%= ranking.team.name %></td>
+                    <td><%= ranking.games %></td>
+                    <td><%= ranking.victories %></td>
+                    <td><%= ranking.draws %></td>
+                    <td><%= ranking.defeats %></td>
+                    <td><%= ranking.points %></td>
                   </tr>
               <% end %>
               </tbody>

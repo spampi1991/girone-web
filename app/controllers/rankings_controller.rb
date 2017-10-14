@@ -3,9 +3,9 @@ class RankingsController < ApplicationController
 
   def index
     if params[:season_id]
-      @rankings = Ranking.of_season(params[:season_id]).order(points: :desc)
+      @rankings = Ranking.of_season(params[:season_id])
     else
-      @rankings = Ranking.order(points: :desc)
+      @rankings = Ranking.order(points: :desc, goals_difference: :desc)
     end
   end
 
@@ -56,6 +56,6 @@ class RankingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def ranking_params
-      params.require(:ranking).permit(:season_id, :team_id, :games, :victories, :draws, :defeats, :goals_scored, :goals_suffered, :points)
+      params.require(:ranking).permit(:season_id, :team_id, :games, :victories, :draws, :defeats, :goals_scored, :goals_suffered, :points, :goals_difference)
     end
 end
