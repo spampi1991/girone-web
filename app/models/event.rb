@@ -13,4 +13,8 @@ class Event < ApplicationRecord
     where('event_date > ?', DateTime.now).order(event_date: :asc).first
   end
 
+  def self.last_event
+    where('event_date < ?', DateTime.now).order(event_date: :asc).first
+  end
+
 end
