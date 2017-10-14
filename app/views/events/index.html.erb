@@ -1,12 +1,12 @@
 
 <%= form_tag(events_path, :method => "get") do %>
-    <%= select_tag :season_id, options_from_collection_for_select(Season.all, :id, :name, params[:season_id]), include_blank: true %>
+    <%= select_tag :season_id, options_from_collection_for_select(Season.all, :id, :name, params[:season_id]), include_blank: false %>
     <%= submit_tag 'Ricerca', { class: 'btn btn-primary' } %>
 <% end %>
 
 <br>
 
-<table class="table">
+<table class="table table-responsive">
   <thead>
     <tr>
       <th>Squadra</th>
