@@ -1,5 +1,5 @@
 class Team < ApplicationRecord
-  paginates_per 10
+  paginates_per 30
 
   validates :name, :stadium, :address, :telephone, :pitch_type, presence: true
 

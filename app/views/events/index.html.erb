@@ -1,6 +1,6 @@
 
 <%= form_tag(events_path, :method => "get") do %>
-    <%= select_tag :season_id, options_from_collection_for_select(Season.all, :id, :name, params[:season_id]), include_blank: false %>
+    <%= select_tag :season_id, options_from_collection_for_select(Season.all, :id, :name, params[:season_id]), include_blank: true %>
     <%= submit_tag 'Ricerca', { class: 'btn btn-primary' } %>
 <% end %>
 

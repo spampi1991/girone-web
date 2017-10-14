@@ -1,5 +1,7 @@
 class Ranking < ApplicationRecord
 
+  paginates_per 5
+
   validates :season_id, :team_id, presence: true
 
   belongs_to :team

@@ -30,4 +30,11 @@ it:
   admin: "Amministrazione"
   season: "Stagione"
   team: "Squadra"
+  views:
+    pagination:
+      first: "&laquo; First"
+      last: "Last &raquo;"
+      previous: "&lsaquo; Prev"
+      next: "Next &rsaquo;"
+      truncate: "&hellip;"
 

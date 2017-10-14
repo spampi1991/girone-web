@@ -40,6 +40,7 @@
           <%= link_to t('rankings'), rankings_path, class: 'btn btn-primary' %>
         </div>
         <div class="card-footer text-muted">
+          <%= paginate @actual_ranking %>
         </div>
       </div>
     </div>
@@ -52,9 +53,10 @@
           <% if @next_event.blank? %>
               <p class="card-text">Nessun evento in programma</p>
           <% else %>
-              <img src="<%= @next_event.local_team.avatar_url %>" class="rounded float-left">
-              <img src="<%= @next_event.away_team.avatar_url %>" class="rounded float-right">
-              <h4 class="card-title"><%= @next_event.local_team.stadium %></h4>
+              <img style="height: 2em;" src="<%= @next_event.local_team.avatar_url %>" class="rounded float-left">
+              <img style="height: 2em;" src="<%= @next_event.away_team.avatar_url %>" class="rounded float-right">
+              <h4 class="card-title"><%= @next_event.local_team.name %> - <%= @next_event.away_team.name %></h4>
+              <h6 class="card-subtitle mb-2 text-muted"><%= @next_event.local_team.stadium %></h6>
               <h6 class="card-subtitle mb-2 text-muted"><%= @next_event.local_team.address %></h6>
               <p class="card-text"><%= @next_event.event_date.strftime("%d/%m/%Y %H:%M") %></p>
           <% end %>
