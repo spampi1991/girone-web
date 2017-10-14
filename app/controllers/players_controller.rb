@@ -1,7 +1,7 @@
 class PlayersController < ApplicationController
 
   def index
-    @players = Player.order(:role, :surname).page params[:page]
+    @players = Player.order(:order, :surname).page params[:page]
   end
 
   def show
@@ -45,7 +45,7 @@ class PlayersController < ApplicationController
 
   private
     def player_params
-      params.require(:player).permit(:name, :surname, :birthday, :role, :shirt_number, :preferred_foot, :team_id, :avatar, :description)
+      params.require(:player).permit(:name, :surname, :birthday, :role, :shirt_number, :preferred_foot, :team_id, :avatar, :description, :order)
     end
 end
 

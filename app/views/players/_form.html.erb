@@ -44,6 +44,11 @@
     <% end %>
 
     <%= content_tag :div, class: 'form-group' do %>
+        <%= f.label :order %>
+        <%= f.number_field :order, placeholder: 'Order', autocomplete: 'off', class: 'form-control' %>
+    <% end %>
+
+    <%= content_tag :div, class: 'form-group' do %>
         <%= f.label :avatar %>
         <%= image_tag(@player.avatar_url) if @player.avatar? %>
         <%= f.file_field :avatar %>
