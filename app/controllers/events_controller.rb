@@ -3,9 +3,9 @@ class EventsController < ApplicationController
 
   def index
     if params[:season_id]
-      @events = Event.of_season(params[:season_id]).order(event_date: :desc)
+      @events = Event.of_season(params[:season_id]).order(event_date: :asc)
     else
-      @events = Event.order(event_date: :desc)
+      @events = Event.order(event_date: :asc)
     end
   end
 
